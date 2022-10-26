@@ -5,8 +5,6 @@ import AppNewsUpdate from "./AppNewsUpdate";
 import AppOrderTimeline from "./AppOrderTimeline";
 
 const Dashboard = () => {
-  const theme = useTheme();
-  console.log(theme);
   return (
     <>
       <Container maxWidth="3xl" style={{ marginTop: "4.3rem" }}>

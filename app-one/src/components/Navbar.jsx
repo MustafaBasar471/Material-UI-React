@@ -10,11 +10,8 @@ import {
   useTheme,
 } from "@mui/material";
 import DrawerComp from "./DrawerComp";
-const Navbar = () => {
-  const [value, setValue] = useState();
-  console.log(value);
+const Navbar = ({ value, setValue }) => {
   const theme = useTheme();
-  console.log(theme);
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <React.Fragment>
