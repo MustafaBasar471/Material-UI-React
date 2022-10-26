@@ -1,0 +1,8 @@
+html {
+  background-color: #F9FAFB;
+}
+
+.App {
+  display: flex;
+  position: relative;
+}
