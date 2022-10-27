@@ -4,7 +4,7 @@ import { faker } from "@faker-js/faker";
 import AppNewsUpdate from "./AppNewsUpdate";
 import AppOrderTimeline from "./AppOrderTimeline";
 
-const Dashboard = () => {
+const Newspaper = () => {
   return (
     <>
       <Container maxWidth="3xl" style={{ marginTop: "1rem" }}>
@@ -47,4 +47,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Newspaper;
