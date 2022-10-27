@@ -5,7 +5,6 @@ import UserPage from "./components/UserPage";
 
 function App() {
   const [value, setValue] = useState();
-
   return (
     <div className="App">
       <Navbar value={value} setValue={setValue} />

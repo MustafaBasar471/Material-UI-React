@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, Typography, useTheme } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import { faker } from "@faker-js/faker";
 import AppNewsUpdate from "./AppNewsUpdate";
 import AppOrderTimeline from "./AppOrderTimeline";
