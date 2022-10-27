@@ -1,5 +1,5 @@
 import Topbar from "./components/Global/Topbar";
-import Newspaper from "./components/Dashboard/Newspaper";
+import Newspaper from "./components/NewsPaper/Newspaper";
 import UserPage from "./components/User/UserPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
