@@ -66,22 +66,31 @@ const AddTaskDetails = () => {
         }}
         gap={3}
       >
-        <Grid xs={5} sx={{ display: "flex", flexDirection: "column" }} gap={2}>
+        <Grid
+          xs={{ xs: 1 }}
+          sx={{ display: "flex", flexDirection: "column" }}
+          gap={2}
+        >
           <TextField
-            sx={{ width: 350 }}
+            sx={{ width: 300 }}
             id="outlined-basic"
             label="Task Title"
             variant="outlined"
+            autoComplete="off"
           />
 
           <TextField
-            sx={{ width: 350 }}
+            sx={{ width: 300 }}
             label="Task Details"
             variant="outlined"
           />
         </Grid>
-        <Grid xs={5} sx={{ display: "flex", flexDirection: "column" }} gap={2}>
-          <FormControl>
+        <Grid
+          xs={{ xs: 1 }}
+          sx={{ display: "flex", flexDirection: "column" }}
+          gap={2}
+        >
+          <FormControl sx={{ width: 300 }}>
             <InputLabel>Assign to</InputLabel>
             <Select
               multiple

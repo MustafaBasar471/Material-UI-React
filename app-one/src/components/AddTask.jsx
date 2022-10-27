@@ -4,21 +4,12 @@ import {
   DialogContent,
   DialogTitle,
   Typography,
-  useMediaQuery,
 } from "@mui/material";
 import React from "react";
-import { useTheme } from "@mui/material/styles";
 
 const AddTask = ({ children, openPopup, setOpenPopUp }) => {
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
   return (
-    <Dialog
-      open={openPopup}
-      fullScreen={fullScreen}
-      maxWidth="md"
-      fullWidth={true}
-    >
+    <Dialog open={openPopup} maxWidth="md" fullWidth={true}>
       <DialogTitle
         sx={{
           display: "flex",
