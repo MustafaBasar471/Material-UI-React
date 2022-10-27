@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+
 html {
   background-color: #F9FAFB;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .App {

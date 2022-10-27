@@ -9,7 +9,12 @@ import React from "react";
 
 const AddTask = ({ children, openPopup, setOpenPopUp }) => {
   return (
-    <Dialog open={openPopup} maxWidth="md" fullWidth={true}>
+    <Dialog
+      open={openPopup}
+      onClose={() => setOpenPopUp(false)}
+      maxWidth="md"
+      fullWidth={true}
+    >
       <DialogTitle
         sx={{
           display: "flex",

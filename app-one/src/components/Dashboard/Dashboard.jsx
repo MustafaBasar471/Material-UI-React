@@ -7,7 +7,7 @@ import AppOrderTimeline from "./AppOrderTimeline";
 const Dashboard = () => {
   return (
     <>
-      <Container maxWidth="3xl" style={{ marginTop: "4.3rem" }}>
+      <Container maxWidth="3xl" style={{ marginTop: "1rem" }}>
         <Typography variant="h4" sx={{ mb: 5 }}>
           Hi, Welcome Back
         </Typography>

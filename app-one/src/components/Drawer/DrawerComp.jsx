@@ -7,8 +7,8 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-const pages = ["Dashboard", "Employee", "My Team"];
+import MenuOpenIcon from "@mui/icons-material/MenuOpen";
+const pages = ["Dashboard", "My Task", "Newspaper"];
 const DrawerComp = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
@@ -28,11 +28,8 @@ const DrawerComp = () => {
           ))}
         </List>
       </Drawer>
-      <IconButton
-        sx={{ color: "white", marginLeft: "auto" }}
-        onClick={() => setOpenDrawer(!openDrawer)}
-      >
-        <MenuIcon color="white" />
+      <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
+        <MenuOpenIcon />
       </IconButton>
     </React.Fragment>
   );

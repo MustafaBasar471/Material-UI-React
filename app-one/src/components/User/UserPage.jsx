@@ -3,8 +3,8 @@ import { Avatar, Box, Button, Container, Typography } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import moment from "moment";
 import USERLIST from "./User";
-import AddTask from "./AddTask";
-import AddTaskDetails from "./AddTaskDetails";
+import AddTask from "../Task/AddTask";
+import AddTaskDetails from "../Task/AddTaskDetails";
 
 const UserPage = () => {
   const [pageSize, setPageSize] = useState(5);

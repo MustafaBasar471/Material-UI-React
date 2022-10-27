@@ -1,13 +1,11 @@
-import Navbar from "./components/Navbar";
-import Dashboard from "./components/Dashboard";
-import { useState } from "react";
-import UserPage from "./components/UserPage";
+import Topbar from "./components/Global/Topbar";
+import Dashboard from "./components/Dashboard/Dashboard";
+import UserPage from "./components/User/UserPage";
 
 function App() {
-  const [value, setValue] = useState();
   return (
     <div className="App">
-      <Navbar value={value} setValue={setValue} />
+      <Topbar />
       {/* Router Gelecek */}
       <Dashboard />
       <UserPage />
