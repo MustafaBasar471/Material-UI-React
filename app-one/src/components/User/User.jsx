@@ -7,7 +7,7 @@ const users = [...Array(24)].map((_, index) => ({
   avatarUrl: `/assets/images/avatars/avatar_${index + 1}.jpg`,
   name: faker.name.fullName(),
   task: faker.commerce.productName(),
-  status: faker.datatype.boolean(),
+  status: sample(["Todo", "In Progress", "Done"]),
   created_at: new Date(),
   role: sample([
     "Leader",

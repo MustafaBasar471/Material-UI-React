@@ -32,7 +32,8 @@ const UserPage = () => {
       field: "status",
       headerName: "Status",
       width: 100,
-      type: "boolean",
+      type: "singleSelect",
+      valueOptions: ["Todo", "In Progress", "Done"],
       editable: true,
     },
     {
