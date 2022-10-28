@@ -6,6 +6,7 @@ import {
   Button,
   Typography,
   Box,
+  Grid,
 } from "@mui/material";
 
 export default function Cards() {
@@ -45,7 +46,7 @@ export default function Cards() {
         <Button variant="contained">Organize your tasks</Button>
       </Box>
       {Tasks.map((item, idx) => (
-        <Card sx={{ marginTop: "1rem" }}>
+        <Card sx={{ marginTop: "1rem" }} key={idx}>
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
               {item.title}
