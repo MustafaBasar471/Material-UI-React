@@ -16,9 +16,10 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import React, { useState } from "react";
 
-const AddTaskDetails = () => {
+const AddTaskDetails = ({ setOpenPopUp, setAlertPopUp }) => {
   const [personName, setPersonName] = useState([]);
   const [value, setValue] = useState(null);
+  const [formData, setFormData] = useState([]);
 
   const handleChange = (e) => {
     const {
@@ -52,8 +53,24 @@ const AddTaskDetails = () => {
     },
   };
 
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    const newTask = {
+      title: e.target.title.value,
+      desc: e.target.desc.value,
+      person: personName,
+      date: value,
+    };
+    setFormData([...formData, newTask]);
+    setOpenPopUp(false);
+    setAlertPopUp(true);
+    setInterval(() => {
+      setAlertPopUp(false);
+    }, 3000);
+  };
+
   return (
-    <form>
+    <form onSubmit={(e) => handleSubmitForm(e)}>
       <Grid
         container
         sx={{
@@ -73,6 +90,7 @@ const AddTaskDetails = () => {
           <TextField
             sx={{ width: 300 }}
             id="outlined-basic"
+            name="title"
             label="Task Title"
             variant="outlined"
             autoComplete="off"
@@ -81,6 +99,7 @@ const AddTaskDetails = () => {
           <TextField
             sx={{ width: 300 }}
             label="Task Details"
+            name="desc"
             variant="outlined"
           />
         </Grid>
@@ -114,6 +133,7 @@ const AddTaskDetails = () => {
           </FormControl>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker
+              required
               label="Choose end date"
               value={value}
               onChange={(newValue) => {
@@ -123,6 +143,7 @@ const AddTaskDetails = () => {
             />
           </LocalizationProvider>
           <Button
+            type="submit"
             variant="contained"
             sx={{ alignSelf: "flex-end", width: 150 }}
           >

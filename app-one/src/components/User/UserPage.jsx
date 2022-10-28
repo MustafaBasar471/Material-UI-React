@@ -6,10 +6,12 @@ import USERLIST from "./User";
 import AddTask from "../Task/AddTask";
 import AddTaskDetails from "../Task/AddTaskDetails";
 import UserTasks from "./UserTask";
+import AlertComponent from "../alerts/AlertComponent";
 
 const UserPage = () => {
   const [pageSize, setPageSize] = useState(5);
   const [openPopUp, setOpenPopUp] = useState(false);
+  const [alertPopUp, setAlertPopUp] = useState(false);
   const columns = [
     {
       field: "avatarUrl",
@@ -46,6 +48,7 @@ const UserPage = () => {
   return (
     <>
       <Container>
+        {alertPopUp && <AlertComponent />}
         <Box sx={{ height: 400, width: "full" }}>
           <Box
             sx={{
@@ -76,7 +79,10 @@ const UserPage = () => {
           />
         </Box>
         <AddTask openPopup={openPopUp} setOpenPopUp={setOpenPopUp}>
-          <AddTaskDetails />
+          <AddTaskDetails
+            setOpenPopUp={setOpenPopUp}
+            setAlertPopUp={setAlertPopUp}
+          />
         </AddTask>
         <UserTasks />
       </Container>
