@@ -36,7 +36,7 @@ export default function Cards() {
     <>
       <Box
         sx={{
-          marginTop: "10rem",
+          marginTop: "3rem",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
