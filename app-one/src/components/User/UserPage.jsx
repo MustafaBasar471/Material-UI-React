@@ -21,7 +21,7 @@ const UserPage = () => {
   const [openPopUp, setOpenPopUp] = useState(false);
   const [alertPopUp, setAlertPopUp] = useState(false);
   const [selectedUser, setSelectedUser] = useState([]);
-  const [isBoxClicked, setisBoxClicked] = useState(false);
+
   const columns = [
     {
       field: "avatarUrl",
@@ -56,23 +56,16 @@ const UserPage = () => {
     { field: "id", headerName: "ID", width: 150 },
   ];
 
-  const handleCheckBoxClick = (id) => {
-    let isChecked_;
-    USERLIST.forEach((data) => {
-      if (id === data.id) {
-        isChecked_ = data.isChecked;
-        data.isChecked = !isChecked_;
-      }
-    });
-    setSelectedUser(USERLIST.filter((data) => data.isChecked === true));
-  };
-
-  const handleGlobalCheckboxClicked = () => {
-    USERLIST.forEach((data) => {
-      data.isChecked = !isBoxClicked;
-      setisBoxClicked(!isBoxClicked);
-    });
-    setSelectedUser(USERLIST.filter((data) => data.isChecked === true));
+  const handleCheckBoxClick = (e) => {
+    // USERLIST.forEach((data) => {
+    // let isChecked_;
+    //   if (id === data.id) {
+    //     isChecked_ = data.isChecked;
+    //     data.isChecked = !isChecked_;
+    //   }
+    // });
+    // setSelectedUser(USERLIST.filter((data) => data.isChecked === true));
+    setSelectedUser([e.row]);
   };
 
   return (
@@ -95,7 +88,6 @@ const UserPage = () => {
             </Button>
           </Box>
           <DataGrid
-            onColumnHeaderClick={() => handleGlobalCheckboxClicked()}
             columns={columns}
             rows={USERLIST}
             getRowId={(row) => row.id}
@@ -106,8 +98,7 @@ const UserPage = () => {
               top: params.isFirstVisible ? 0 : 5,
               bottom: params.isLastVisible ? 0 : 5,
             })}
-            checkboxSelection
-            onCellClick={(e) => handleCheckBoxClick(e.id)}
+            onCellClick={handleCheckBoxClick}
           />
         </Box>
         <AddTask openPopup={openPopUp} setOpenPopUp={setOpenPopUp}>
