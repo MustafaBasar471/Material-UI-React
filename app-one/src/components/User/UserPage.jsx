@@ -21,6 +21,7 @@ const UserPage = () => {
   const [openPopUp, setOpenPopUp] = useState(false);
   const [alertPopUp, setAlertPopUp] = useState(false);
   const [selectedUser, setSelectedUser] = useState([]);
+  const [isBoxClicked, setisBoxClicked] = useState(false);
   const columns = [
     {
       field: "avatarUrl",
@@ -66,6 +67,14 @@ const UserPage = () => {
     setSelectedUser(USERLIST.filter((data) => data.isChecked === true));
   };
 
+  const handleGlobalCheckboxClicked = () => {
+    USERLIST.forEach((data) => {
+      data.isChecked = !isBoxClicked;
+      setisBoxClicked(!isBoxClicked);
+    });
+    setSelectedUser(USERLIST.filter((data) => data.isChecked === true));
+  };
+
   return (
     <>
       <Container>
@@ -86,6 +95,7 @@ const UserPage = () => {
             </Button>
           </Box>
           <DataGrid
+            onColumnHeaderClick={() => handleGlobalCheckboxClicked()}
             columns={columns}
             rows={USERLIST}
             getRowId={(row) => row.id}
@@ -144,6 +154,7 @@ const UserPage = () => {
             >
               {selectedUser.map((userData, idx) => (
                 <Grid
+                  key={idx}
                   item
                   xs={12}
                   sm={6}
@@ -161,14 +172,12 @@ const UserPage = () => {
                   />
                   <Stack>
                     <Typography
-                      key={idx}
                       variant="subtitle1"
                       sx={{ marginLeft: "1.2rem" }}
                     >
                       Name : {userData.name}
                     </Typography>
                     <Typography
-                      key={idx}
                       variant="subtitle1"
                       sx={{ marginLeft: "1.2rem" }}
                     >
