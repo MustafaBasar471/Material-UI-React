@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 
-const Login = () => {
+const Register = () => {
   return (
     <div className="d-flex col-12">
       <img
@@ -16,7 +15,7 @@ const Login = () => {
         className="col-12 col-md-4 d-flex justify-content-center flex-column align-items-center"
         style={{ height: "100vh" }}
       >
-        <p className="fs-2">Login Page</p>
+        <p className="fs-2">Register Page</p>
         <FormGroup style={{ width: "18rem" }}>
           <Label for="email">Enter Your Email</Label>
           <Input />
@@ -26,17 +25,17 @@ const Login = () => {
           <Input />
         </FormGroup>
         <Button color="secondary" style={{ width: "18rem" }}>
-          Log in
+          Register
         </Button>
         <p className="my-3">Or</p>
         <Button color="primary" style={{ width: "18rem" }}>
-          Log in With Google
+          Sign In With Google
         </Button>
         <p className="mt-4">
-          Don't have an account?
-          <Link to="/auth/register">
+          Do have an account?
+          <Link to="/auth/login">
             <span className="text-primary m-1 text-decoration-underline">
-              Sign up for free
+              Log in
             </span>
           </Link>
         </p>
@@ -45,4 +44,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
