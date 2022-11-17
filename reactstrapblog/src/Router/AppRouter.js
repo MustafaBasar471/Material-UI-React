@@ -1,6 +1,13 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Login, Register, Dashboard, BlogCardDetails } from "../pages";
+import {
+  Login,
+  Register,
+  Dashboard,
+  BlogCardDetails,
+  CreateBlog,
+  UserProfile,
+} from "../pages";
 
 const AppRouter = () => {
   const userInfo = true;
@@ -12,6 +19,14 @@ const AppRouter = () => {
         <Route
           path="/post/details"
           element={userInfo ? <BlogCardDetails /> : <Login />}
+        />
+        <Route
+          path="/post/create"
+          element={userInfo ? <CreateBlog /> : <Login />}
+        />
+        <Route
+          path="/profile"
+          element={userInfo ? <UserProfile /> : <Login />}
         />
         {/* Auth */}
         <Route
