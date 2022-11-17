@@ -1,15 +1,27 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Layout } from "../components/";
-import { Login, Register } from "../pages";
+import { Login, Register, Dashboard, BlogCardDetails } from "../pages";
 
 const AppRouter = () => {
+  const userInfo = true;
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route path="/auth/login" element={<Login />} />
-        <Route path="/auth/register" element={<Register />} />
+        {/* Main */}
+        <Route path="/" element={userInfo ? <Dashboard /> : <Login />} />
+        <Route
+          path="/post/details"
+          element={userInfo ? <BlogCardDetails /> : <Login />}
+        />
+        {/* Auth */}
+        <Route
+          path="/auth/login"
+          element={userInfo ? <Dashboard /> : <Login />}
+        />
+        <Route
+          path="/auth/register"
+          element={userInfo ? <Dashboard /> : <Register />}
+        />
       </Routes>
     </BrowserRouter>
   );

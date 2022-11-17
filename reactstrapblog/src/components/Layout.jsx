@@ -3,10 +3,10 @@ import { NavbarItem } from "./";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <>
       <NavbarItem />
       {children}
-    </div>
+    </>
   );
 };
 
