@@ -22,7 +22,7 @@ const CreateBlog = () => {
             </Col>
           </FormGroup>
           <FormGroup row>
-            <Label sm={2}>Password</Label>
+            <Label sm={2}>Blog</Label>
             <Col sm={10}>
               <Input
                 placeholder="Type something"
@@ -38,10 +38,7 @@ const CreateBlog = () => {
             <Label sm={2}>Select Image</Label>
             <Col sm={10}>
               <Input name="file" type="file" />
-              <FormText>
-                This is some placeholder block-level help text for the above
-                input. It‘s a bit lighter and easily wraps to a new line.
-              </FormText>
+              <FormText>Choose the image for your blog</FormText>
             </Col>
           </FormGroup>
           <FormGroup row>
